@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sélecteur de Matières DevWeb</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="dashboard" id="main-container">
+      <section class="main-content" id="print-section">
+        <div class="user-info">
+          <div class="input-group">
+            <label for="user-lastname">Nom :</label>
+            <input
+              type="text"
+              id="user-lastname"
+              placeholder="Nom"
+              maxlength="24"
+            />
+          </div>
+          <div class="input-group">
+            <label for="user-firstname">Prénom :</label>
+            <input
+              type="text"
+              id="user-firstname"
+              placeholder="Prénom"
+              maxlength="24"
+            />
+          </div>
+        </div>
+
+        <h1>Choix des matières</h1>
+        <table id="course-table">
+          <thead>
+            <tr>
+              <th>Choix</th>
+              <th>Cours (cliquer pour détails)</th>
+              <th style="text-align: right">ECTS</th>
+            </tr>
+          </thead>
+          <tbody id="course-body">
+            <tr data-h="3" data-ti="3" data-ects="4">
+              <td>
+                <input type="checkbox" class="course-check" checked disabled />
+              </td>
+              <td>
+                <div class="course-title">Anglais 1 (Obligatoire) (3h/sem)</div>
+                <div class="description">Maîtrise de la langue anglaise.</div>
+              </td>
+              <td class="ects-cell">4</td>
+            </tr>
+            <tr data-h="3" data-ti="2" data-ects="3.32">
+              <td><input type="checkbox" class="course-check" /></td>
+              <td>
+                <div class="course-title">AUDIO (3h/sem)</div>
+                <div class="description">
+                  Cours axé sur les traitements sonores, les techniques
+                  d’enregistrements, le montage et mixage sonore.
+                </div>
+              </td>
+              <td class="ects-cell">3.32</td>
+            </tr>
+            <tr data-h="5" data-ti="3" data-ects="5.32">
+              <td><input type="checkbox" class="course-check" /></td>
+              <td>
+                <div class="course-title">WEB 3 : Dynamique (5h/sem)</div>
+                <div class="description">
+                  Ce cours permet à l’étudiant de développer des sites web
+                  dynamiques dans un contexte client-serveur. L’essentiel du
+                  travail de l’étudiant se situe du côté client. Des notions de
+                  programmation client en Javascript sont vues. Cela permet à
+                  l’étudiant d’adapter l’affichage d’un site web de manière
+                  précise et harmonieuse, en fonction des données et des actions
+                  de l’utilisateur. Il se familiarise avec les bases de
+                  l’utilisation de scripts du côté serveur, en utilisant du code
+                  existant. Dans le cadre du cours, l’étudiant doit aussi
+                  intégrer des médias et il doit utiliser des outils pour
+                  optimiser ses méthodes de travail.
+                </div>
+              </td>
+              <td class="ects-cell">5.32</td>
+            </tr>
+
+            <tr data-h="4" data-ti="2" data-ects="4">
+              <td><input type="checkbox" class="course-check" /></td>
+              <td>
+                <div class="course-title">3D I (4h/sem)</div>
+                <div class="description">
+                  Cours de modélisation 3D visant à initier l’étudiant à la
+                  création d’objets et de décors en trois dimensions.
+                </div>
+              </td>
+              <td class="ects-cell">4</td>
+            </tr>
+            <tr data-h="5" data-ti="3" data-ects="5.32">
+              <td><input type="checkbox" class="course-check" /></td>
+              <td>
+                <div class="course-title">Jeu vidéo 3 : retro (5h/sem)</div>
+                <div class="description">
+                  Le cours de Jeu Vidéo 3 : Retro permet aux étudiants de
+                  développer des jeux vidéo 2D simples, mais complet. Les
+                  notions logiques liées aux événements sont mises de l’avant,
+                  notamment pour la gestion des collisions et la gestion du
+                  temps. Plusieurs notions propres aux jeux simples sont aussi
+                  abordées, comme la navigation, les contrôles clavier, le
+                  pointage et les bonus, les arrière-plans défilants, les
+                  animations interactives et effets, etc. Préalables : les
+                  étudiants qui ne possèdent pas les bases de Unity pourront
+                  faire de l’autoformation avant leur arrivée au Québec, avec le
+                  site web du cours Jeu 2:
+                  https://cours.tim-cstj.ca/jeu2/accueil/ (les contenus seront
+                  ajoutés peu à peu d’ici à la fin du mois d’avril).
+                </div>
+              </td>
+              <td class="ects-cell">5.32</td>
+            </tr>
+            <tr data-h="6" data-ti="4" data-ects="6.66">
+              <td><input type="checkbox" class="course-check" /></td>
+              <td>
+                <div class="course-title">
+                  WEB 5 : Applicatif (Artistique) (6h/sem)
+                </div>
+                <div class="description">
+                  Développement d’applications web utilisant une architecture
+                  client‑serveur en mode découplé. Travail en équipe avec
+                  designers et développeurs pour créer des interfaces réactives
+                  et produire les médias nécessaires.
+                </div>
+              </td>
+              <td class="ects-cell">6.66</td>
+            </tr>
+            <tr data-h="3" data-ti="2" data-ects="3.32">
+              <td>
+                <input type="checkbox" class="course-check" checked disabled />
+              </td>
+              <td>
+                <div class="course-title">
+                  Préparation au monde pro (Obligatoire) (3h/sem)
+                </div>
+                <div class="description">
+                  L’étudiant bâtit ou adapte ses propres outils pour une
+                  recherche d’emploi efficace (CV, lettre, et autres outils
+                  d’autopromotion) et il développe les habiletés nécessaires à
+                  l’obtention de l’emploi convoité à travers différentes
+                  activités (ex. simulation d’appel, simulation d’entrevue).
+                </div>
+              </td>
+              <td class="ects-cell">3.32</td>
+            </tr>
+            <tr data-h="3" data-ti="1" data-ects="2.66">
+              <td><input type="checkbox" class="course-check" /></td>
+              <td>
+                <div class="course-title">Technologies émergentes (3h/sem)</div>
+                <div class="description">
+                  Réaliser des créations 3D, audiovidéo immersive, réalité
+                  virtuelle et/ou augmentée Préalables : Modélisation et
+                  animation 3D
+                </div>
+              </td>
+              <td class="ects-cell">2.66</td>
+            </tr>
+            <tr data-h="3" data-ti="2" data-ects="3.32">
+              <td><input type="checkbox" class="course-check" /></td>
+              <td>
+                <div class="course-title">Vidéo 2 (3h/sem)</div>
+                <div class="description">
+                  Techniques avancées en vidéo, création d’effets spéciaux,
+                  intégration d’éléments 3D et suivi de mouvement Préalables :
+                  Montage vidéo et audio
+                </div>
+              </td>
+              <td class="ects-cell">3.32</td>
+            </tr>
+            <tr data-h="3" data-ti="3" data-ects="4">
+              <td><input type="checkbox" class="course-check" /></td>
+              <td>
+                <div class="course-title">
+                  Création et médias numériques (complémentaire) (3h/sem)
+                </div>
+                <div class="description">
+                  Le cours Création et médias numériques s’adresse aux élèves
+                  passionnés par les médias numériques tels que les images, les
+                  animations et le son. Il est conçu pour ceux qui souhaitent
+                  exprimer leur créativité tout en développant leurs compétences
+                  techniques à travers la réalisation de projets originaux. Les
+                  élèves auront l'occasion de se familiariser avec la création
+                  et la manipulation des médias numériques en explorant les
+                  défis qui y sont liés. Le cours met également l'accent sur
+                  l'importance de la créativité, les exigences des modes de
+                  production et les aspects essentiels de la diffusion des
+                  projets.
+                </div>
+              </td>
+              <td class="ects-cell">4</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <aside class="sidebar" id="sidebar-id">
+        <div class="sticky-card" id="recap-card">
+          <h2>Récapitulatif</h2>
+          <hr />
+          <div class="stat ects-row">
+            <span>TOTAL ECTS</span>
+            <span id="total-ects" class="val">0.00</span>
+          </div>
+          <div class="stat">
+            <span>Heures / Semaine</span>
+            <span id="total-h" class="val">0</span>
+          </div>
+          <div class="stat">
+            <span>Travail Individuel</span>
+            <span id="total-ti" class="val">0</span>
+          </div>
+          <div class="stat total-row">
+            <span>CHARGE GLOBALE</span>
+            <span id="grand-total" class="val">0</span>
+          </div>
+          <button id="download-pdf" class="btn-pdf">Télécharger PDF</button>
+        </div>
+      </aside>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
