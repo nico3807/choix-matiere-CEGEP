@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sélecteur de Matières DevWeb</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="dashboard" id="main-container">
+      <section class="main-content" id="print-section">
+        <div class="user-info">
+          <div class="input-group">
+            <label for="user-lastname">Nom :</label>
+            <input
+              type="text"
+              id="user-lastname"
+              placeholder="Nom"
+              maxlength="24"
+            />
+          </div>
+          <div class="input-group">
+            <label for="user-firstname">Prénom :</label>
+            <input
+              type="text"
+              id="user-firstname"
+              placeholder="Prénom"
+              maxlength="24"
+            />
+          </div>
+        </div>
+
+        <h1>Choix des matières</h1>
+        <table id="course-table">
+          <thead>
+            <tr>
+              <th>Choix</th>
+              <th>Cours (cliquer pour détails)</th>
+              <th style="text-align: right">ECTS</th>
+            </tr>
+          </thead>
+          <tbody id="course-body">
+            <tr data-h="3" data-ti="3" data-ects="4">
+              <td>
+                <input type="checkbox" class="course-check" checked disabled />
+              </td>
+              <td>
+                <div class="course-title">Anglais 1 (Obligatoire)</div>
+                <div class="description">Maîtrise de la langue anglaise.</div>
+              </td>
+              <td class="ects-cell">4</td>
+            </tr>
+            <tr data-h="3" data-ti="2" data-ects="3.32">
+              <td><input type="checkbox" class="course-check" /></td>
+              <td>
+                <div class="course-title">AUDIO</div>
+                <div class="description">
+                  Traitements sonores, enregistrements, montage et mixage.
+                </div>
+              </td>
+              <td class="ects-cell">3.32</td>
+            </tr>
+            <tr data-h="5" data-ti="3" data-ects="5.32">
+              <td><input type="checkbox" class="course-check" /></td>
+              <td>
+                <div class="course-title">WEB 3 : Dynamique</div>
+                <div class="description">
+                  Sites web dynamiques et programmation Javascript client.
+                </div>
+              </td>
+              <td class="ects-cell">5.32</td>
+            </tr>
+            <tr data-h="4" data-ti="2" data-ects="4">
+              <td><input type="checkbox" class="course-check" /></td>
+              <td>
+                <div class="course-title">Design 3</div>
+                <div class="description">
+                  Design d’interfaces et maquettage interactif.
+                </div>
+              </td>
+              <td class="ects-cell">4</td>
+            </tr>
+            <tr data-h="4" data-ti="2" data-ects="4">
+              <td><input type="checkbox" class="course-check" /></td>
+              <td>
+                <div class="course-title">3D I</div>
+                <div class="description">
+                  Modélisation 3D d’objets et de décors.
+                </div>
+              </td>
+              <td class="ects-cell">4</td>
+            </tr>
+            <tr data-h="5" data-ti="3" data-ects="5.32">
+              <td><input type="checkbox" class="course-check" /></td>
+              <td>
+                <div class="course-title">Jeu vidéo 3 : retro</div>
+                <div class="description">
+                  Jeux vidéo 2D, collisions et gestion du temps.
+                </div>
+              </td>
+              <td class="ects-cell">5.32</td>
+            </tr>
+            <tr data-h="6" data-ti="4" data-ects="6.66">
+              <td><input type="checkbox" class="course-check" /></td>
+              <td>
+                <div class="course-title">WEB 5 : Applicatif</div>
+                <div class="description">
+                  Architecture client-serveur et modules adaptifs.
+                </div>
+              </td>
+              <td class="ects-cell">6.66</td>
+            </tr>
+            <tr data-h="3" data-ti="2" data-ects="3.32">
+              <td>
+                <input type="checkbox" class="course-check" checked disabled />
+              </td>
+              <td>
+                <div class="course-title">
+                  Préparation au monde pro (Obligatoire)
+                </div>
+                <div class="description">
+                  CV, lettre de motivation et simulations d’entrevue.
+                </div>
+              </td>
+              <td class="ects-cell">3.32</td>
+            </tr>
+            <tr data-h="3" data-ti="1" data-ects="2.66">
+              <td><input type="checkbox" class="course-check" /></td>
+              <td>
+                <div class="course-title">Technologies émergentes</div>
+                <div class="description">
+                  Créations 3D, audiovidéo immersive, VR/AR.
+                </div>
+              </td>
+              <td class="ects-cell">2.66</td>
+            </tr>
+            <tr data-h="3" data-ti="2" data-ects="3.32">
+              <td><input type="checkbox" class="course-check" /></td>
+              <td>
+                <div class="course-title">Vidéo 2</div>
+                <div class="description">
+                  Techniques avancées, effets spéciaux et suivi de mouvement.
+                </div>
+              </td>
+              <td class="ects-cell">3.32</td>
+            </tr>
+            <tr data-h="3" data-ti="3" data-ects="4">
+              <td><input type="checkbox" class="course-check" /></td>
+              <td>
+                <div class="course-title">Création et médias numériques</div>
+                <div class="description">
+                  Manipulation des médias et projets originaux.
+                </div>
+              </td>
+              <td class="ects-cell">4</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <aside class="sidebar" id="sidebar-id">
+        <div class="sticky-card" id="recap-card">
+          <h2>Récapitulatif</h2>
+          <hr />
+          <div class="stat ects-row">
+            <span>TOTAL ECTS</span>
+            <span id="total-ects" class="val">0.00</span>
+          </div>
+          <div class="stat">
+            <span>Heures / Semaine</span>
+            <span id="total-h" class="val">0</span>
+          </div>
+          <div class="stat">
+            <span>Travail Individuel</span>
+            <span id="total-ti" class="val">0</span>
+          </div>
+          <div class="stat total-row">
+            <span>CHARGE GLOBALE</span>
+            <span id="grand-total" class="val">0</span>
+          </div>
+          <button id="download-pdf" class="btn-pdf">Télécharger PDF</button>
+        </div>
+      </aside>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
